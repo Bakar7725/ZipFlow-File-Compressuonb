@@ -99,6 +99,6 @@ Before installing ZipFlow Pro, ensure you have:
 
 ```bash
 git clone https://github.com/Bakar7725/ZipFlow-File-Compressuonb.git
-cd ZipFlow-File-Compressuonb-main
+cd ZipFlow-File-Compressuonb
 npm install
 node server.js Run
