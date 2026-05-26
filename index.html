@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZipFlow Pro | Advanced File Compression</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator">
+        <div class="scroll-dot active" data-section="hero"></div>
+        <div class="scroll-dot" data-section="features"></div>
+        <div class="scroll-dot" data-section="processor"></div>
+        <div class="scroll-dot" data-section="stats"></div>
+        <div class="scroll-dot" data-section="footer"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-file-archive"></i>
+                    </div>
+                    <div class="logo-text">ZipFlow</div>
+                </a>
+
+                <div class="nav-links">
+                    <a href="#features" class="nav-link" id="navFeature">Features</a>
+                    <a href="#processor" class="nav-link" id="navCompress">Compress</a>
+                    <a href="#processor" class="nav-link" id="navDecompress">Decompress</a>
+                    <a href="#stats" class="nav-link">Stats</a>
+                    <a href="#history" class="nav-link" id="navHistory">History</a>
+                </div>
+
+                <div class="header-controls">
+                    <div class="theme-toggle" id="themeToggle"></div>
+                    <button class="btn btn-outline" id="loginBtn">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                    <button class="btn btn-primary" id="registerBtn">
+                        <i class="fas fa-user-plus"></i> Register
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-bg-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content animate-on-scroll">
+                <h1 class="hero-title text-glow">
+                    Compress. Secure.<br>Share. <span style="color:var(--secondary-color)">Efficiently.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Professional-grade file compression with military-grade encryption,
+                    cloud integration, and real-time processing. Experience the future of file management.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary ripple-effect" id="startCompress">
+                        <i class="fas fa-rocket"></i> Start Compressing
+                    </button>
+                    <button class="btn btn-secondary ripple-effect" id="startDecompress">
+                        <i class="fas fa-expand-alt"></i> Decompress Files
+                    </button>
+                    <button class="btn btn-outline ripple-effect" id="watchDemo">
+                        <i class="fas fa-play-circle"></i> Watch Demo
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-image animate-on-scroll">
+                <div class="hero-visual">
+                    <div class="floating-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-compress-alt"></i>
+                        </div>
+                        <h3>85% Compression</h3>
+                        <p>Advanced algorithms for maximum file size reduction</p>
+                    </div>
+                    <div class="floating-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>AES-256 Encryption</h3>
+                        <p>Military-grade security for your files</p>
+                    </div>
+                    <div class="floating-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Lightning Fast</h3>
+                        <p>Process files in milliseconds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Advanced Features</h2>
+            <p class="section-subtitle animate-on-scroll">
+                Everything you need for professional file management in one powerful platform
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="feature-title">AI-Powered Optimization</h3>
+                    <p class="feature-desc">
+                        Our AI analyzes file types and content to apply the most efficient compression algorithm
+                        automatically.
+                    </p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Cloud Integration</h3>
+                    <p class="feature-desc">
+                        Direct integration with Google Drive, Dropbox, and OneCloud. Compress files without downloading.
+                    </p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="feature-title">Bank-Level Security</h3>
+                    <p class="feature-desc">
+                        AES-256 encryption, two-factor authentication, and secure file shredding after processing.
+                    </p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-batch-processing"></i>
+                    </div>
+                    <h3 class="feature-title">Batch Processing</h3>
+                    <p class="feature-desc">
+                        Process thousands of files simultaneously with our powerful batch processing engine.
+                    </p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Analytics Dashboard</h3>
+                    <p class="feature-desc">
+                        Track compression ratios, storage savings, and performance metrics in real-time.
+                    </p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Cross-Platform</h3>
+                    <p class="feature-desc">
+                        Available on Web, Desktop (Windows/Mac/Linux), and Mobile (iOS/Android).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- File Processor -->
+    <section class="processor-section" id="processor">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">File Processor</h2>
+            <p class="section-subtitle animate-on-scroll">
+                Drag & drop your files, customize settings, and watch the magic happen
+            </p>
+
+            <div class="processor-container animate-on-scroll">
+                <div class="processor-tabs">
+                    <button class="tab-btn active" data-tab="compress">
+                        <i class="fas fa-compress-alt"></i> Compress
+                    </button>
+                    <button class="tab-btn decompress-btn" data-tab="decompress">
+                        <i class="fas fa-expand-alt"></i> Decompress
+                    </button>
+                </div>
+
+                <div class="file-drop-zone" id="dropZone">
+                    <i class="fas fa-cloud-upload-alt drop-zone-icon"></i>
+                    <h3 style="margin-bottom: 20px; color: var(--dark-color);" id="dropZoneTitle">
+                        Drop Files Here for Compression
+                    </h3>
+                    <p style="color: var(--gray-medium); margin-bottom: 30px;" id="dropZoneSubtitle">
+                        or click to browse. Supports TXT and BMP formats
+                    </p>
+                    <button class="btn btn-outline" id="browseFiles">
+                        <i class="fas fa-folder-open"></i> Browse Files
+                    </button>
+                    <input type="file" id="fileInput" multiple accept=".txt,.bmp,.bin,.dat" style="display: none;">
+                </div>
+
+                <div class="options-grid">
+                    <!-- First Box - Dynamic Options -->
+                    <div class="option-card animate-on-scroll" id="fileTypeBox">
+                        <h4 style="margin-bottom: 15px; color: var(--dark-color);">
+                            <i class="fas fa-file" style="color: var(--primary-color); margin-right: 10px;"></i>
+                            <span id="fileTypeTitle">File Type</span>
+                        </h4>
+                        <select id="fileType"
+                            style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--gray-light); background: var(--card-bg); color: var(--dark-color);">
+                            <!-- Options will be dynamically updated -->
+                            <option value="image">IMAGE (.BMP)</option>
+                            <option value="text">Text Document (.TXT)</option>
+                        </select>
+                    </div>
+
+                    <!-- Second Box - Display Only -->
+                    <div class="option-card display-card animate-on-scroll display-card-blue" id="outputFormatBox">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div class="display-icon"
+                                style="background: var(--primary-color); padding: 15px; border-radius: 12px; color: white;">
+                                <i class="fas fa-file-export" style="font-size: 1.5rem;"></i>
+                            </div>
+                            <div>
+                                <h4
+                                    style="margin: 0 0 8px 0; color: var(--dark-color); font-size: 0.9rem; opacity: 0.8;">
+                                    OUTPUT FORMAT
+                                </h4>
+                                <div id="compressionInfo" class="display-text"
+                                    style="font-size: 1.2rem; font-weight: 600; color: var(--dark-color);">
+                                    <!-- Dynamic content will appear here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Third Box - Display Only -->
+                    <div class="option-card display-card animate-on-scroll display-card-green">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div class="display-icon"
+                                style="background: #4caf50; padding: 15px; border-radius: 12px; color: white;">
+                                <i class="fas fa-shield-alt" style="font-size: 1.5rem;"></i>
+                            </div>
+                            <div>
+                                <h4
+                                    style="margin: 0 0 8px 0; color: var(--dark-color); font-size: 0.9rem; opacity: 0.8;">
+                                    SECURITY STATUS
+                                </h4>
+                                <div class="display-text"
+                                    style="font-size: 1.2rem; font-weight: 600; color: var(--dark-color);">
+                                    Data Completely Secured
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 5px; margin-top: 5px;">
+                                    <i class="fas fa-check-circle" style="color: #4caf50; font-size: 0.9rem;"></i>
+                                    <span style="font-size: 0.9rem; color: #666;">AES-256 Encrypted</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-container" id="progressContainer">
+                        <div class="progress-bar compress-progress" id="progressBar"></div>
+                        <div class="upload-status" id="uploadStatus"></div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button class="btn btn-primary ripple-effect" id="processFiles"
+                            style="padding: 18px 50px; font-size: 1.2rem;">
+                            <i class="fas fa-cogs"></i> <span id="processButtonText">Process Files Now</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+    <!-- Download Modal -->
+    <div class="download-modal" id="downloadModal">
+        <div class="download-container">
+            <button class="download-close" id="closeDownload">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="download-icon">
+                <i class="fas fa-download"></i>
+            </div>
+            <h3>Download Ready!</h3>
+            <p id="downloadFileName">File processed successfully</p>
+            <div class="download-stats">
+                <div class="download-stat">
+                    <span class="stat-label">Operation:</span>
+                    <span class="stat-value" id="downloadOperation">Compression</span>
+                </div>
+                <div class="download-stat">
+                    <span class="stat-label">Size:</span>
+                    <span class="stat-value" id="downloadSize">--</span>
+                </div>
+                <div class="download-stat">
+                    <span class="stat-label">Ratio:</span>
+                    <span class="stat-value" id="downloadRatio">--</span>
+                </div>
+            </div>
+            <button class="btn btn-primary" id="downloadBtn">
+                <i class="fas fa-download"></i> Download File
+            </button>
+            <button class="btn btn-outline" id="downloadCloseBtn">
+                <i class="fas fa-times"></i> Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Statistics Section -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">By The Numbers</h2>
+            <p class="section-subtitle animate-on-scroll">
+                Trusted by thousands of professionals worldwide
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card animate-on-scroll">
+                    <div class="stat-circle">
+                        <div class="stat-circle-inner">
+                            <span class="stat-number">10M+</span>
+                        </div>
+                    </div>
+                    <h3 style="color: var(--dark-color); margin-bottom: 10px;">Files Processed</h3>
+                    <p style="color: var(--gray-medium);">And counting every second</p>
+                </div>
+
+                <div class="stat-card animate-on-scroll">
+                    <div class="stat-circle">
+                        <div class="stat-circle-inner">
+                            <span class="stat-number">78%</span>
+                        </div>
+                    </div>
+                    <h3 style="color: var(--dark-color); margin-bottom: 10px;">Avg. Compression</h3>
+                    <p style="color: var(--gray-medium);">Industry-leading efficiency</p>
+                </div>
+
+                <div class="stat-card animate-on-scroll">
+                    <div class="stat-circle">
+                        <div class="stat-circle-inner">
+                            <span class="stat-number">99.9%</span>
+                        </div>
+                    </div>
+                    <h3 style="color: var(--dark-color); margin-bottom: 10px;">Uptime</h3>
+                    <p style="color: var(--gray-medium);">Reliable and always available</p>
+                </div>
+
+                <div class="stat-card animate-on-scroll">
+                    <div class="stat-circle">
+                        <div class="stat-circle-inner">
+                            <span class="stat-number">50K+</span>
+                        </div>
+                    </div>
+                    <h3 style="color: var(--dark-color); margin-bottom: 10px;">Happy Users</h3>
+                    <p style="color: var(--gray-medium);">Join our community</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- File History Section -->
+    <section class="history-section" id="history">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">File History</h2>
+            <p class="section-subtitle animate-on-scroll">
+                Track all your compression and decompression activities
+            </p>
+
+            <div class="history-controls animate-on-scroll">
+                <div class="filter-controls">
+
+                    <button class="btn btn-outline" id="refreshHistory">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                    <button class="btn btn-primary" id="clearHistory">
+                        <i class="fas fa-trash"></i> Clear History
+                    </button>
+                </div>
+            </div>
+
+            <div class="history-container" id="historyContainer">
+                <!-- History items will be loaded here -->
+            </div>
+
+            <div class="pagination" id="pagination">
+                <!-- Pagination will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- File Details Modal -->
+    <div class="file-details-modal" id="fileDetailsModal">
+        <div class="file-details-container">
+            <button class="file-details-close" id="closeFileDetails">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="file-details-header">
+                <h3 id="fileName">File Details</h3>
+                <div class="history-operation" id="fileOperationType">compress</div>
+            </div>
+            <div class="file-details-content" id="fileDetailsContent">
+                <!-- Details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">
+                        <i class="fas fa-file-archive"></i>
+                        ZipFlow Pro
+                    </div>
+                    <p style="color: var(--gray-medium); margin-bottom: 30px; line-height: 1.6;">
+                        Professional file compression and decompression tools with enterprise-grade features, security,
+                        and performance.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--dark-color); margin-bottom: 25px; font-size: 1.3rem;">Product</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#"
+                                style="color: var(--gray-medium); text-decoration: none; display: block; padding: 8px 0; transition: var(--transition-fast);">Features</a>
+                        </li>
+                        <li><a href="#"
+                                style="color: var(--gray-medium); text-decoration: none; display: block; padding: 8px 0; transition: var(--transition-fast);">Pricing</a>
+                        </li>
+                        <li><a href="#"
+                                style="color: var(--gray-medium); text-decoration: none; display: block; padding: 8px 0; transition: var(--transition-fast);">API</a>
+                        </li>
+                        <li><a href="#"
+                                style="color: var(--gray-medium); text-decoration: none; display: block; padding: 8px 0; transition: var(--transition-fast);">Documentation</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--dark-color); margin-bottom: 25px; font-size: 1.3rem;">Company</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#"
+                                style="color: var(--gray-medium); text-decoration: none; display: block; padding: 8px 0; transition: var(--transition-fast);">About</a>
+                        </li>
+                        <li><a href="#"
+                                style="color: var(--gray-medium); text-decoration: none; display: block; padding: 8px 0; transition: var(--transition-fast);">Blog</a>
+                        </li>
+                        <li><a href="#"
+                                style="color: var(--gray-medium); text-decoration: none; display: block; padding: 8px 0; transition: var(--transition-fast);">Careers</a>
+                        </li>
+                        <li><a href="#"
+                                style="color: var(--gray-medium); text-decoration: none; display: block; padding: 8px 0; transition: var(--transition-fast);">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--dark-color); margin-bottom: 25px; font-size: 1.3rem;">Legal</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#"
+                                style="color: var(--gray-medium); text-decoration: none; display: block; padding: 8px 0; transition: var(--transition-fast);">Privacy
+                                Policy</a></li>
+                        <li><a href="#"
+                                style="color: var(--gray-medium); text-decoration: none; display: block; padding: 8px 0; transition: var(--transition-fast);">Terms
+                                of Service</a></li>
+                        <li><a href="#"
+                                style="color: var(--gray-medium); text-decoration: none; display: block; padding: 8px 0; transition: var(--transition-fast);">Cookie
+                                Policy</a></li>
+                        <li><a href="#"
+                                style="color: var(--gray-medium); text-decoration: none; display: block; padding: 8px 0; transition: var(--transition-fast);">GDPR</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p style="color: var(--gray-medium);">
+                    © 2024 ZipFlow Pro. All rights reserved. Made with <i class="fas fa-heart"
+                        style="color: var(--secondary-color);"></i> for the developer community.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="auth-modal" id="loginModal">
+        <div class="auth-container">
+            <button class="auth-close" id="closeLogin">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 style="font-size: 2.5rem; margin-bottom: 10px; color: var(--dark-color);">Welcome Back</h2>
+            <p style="color: var(--gray-medium); margin-bottom: 40px;">Sign in to your ZipFlow Pro account</p>
+
+            <form id="loginForm" style="margin-bottom: 30px;">
+                <div style="margin-bottom: 20px;">
+                    <input type="email" id="loginEmail" placeholder="Email Address" required
+                        style="width: 100%; padding: 18px; border-radius: 12px; border: 1px solid var(--gray-light); background: var(--card-bg); color: var(--dark-color); font-size: 1rem;">
+                    <div id="loginEmailError" class="error-label"
+                        style="display: none; color: #ff4444; font-size: 0.9rem; margin-top: 5px; text-align: left;">
+                        Please enter a valid email address
+                    </div>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <input type="password" id="loginPassword" placeholder="Password" required
+                        style="width: 100%; padding: 18px; border-radius: 12px; border: 1px solid var(--gray-light); background: var(--card-bg); color: var(--dark-color); font-size: 1rem;">
+                    <div id="loginPasswordError" class="error-label"
+                        style="display: none; color: #ff4444; font-size: 0.9rem; margin-top: 5px; text-align: left;">
+                        Password is required
+                    </div>
+                </div>
+                <div id="loginGeneralError" class="error-label"
+                    style="display: none; color: #ff4444; font-size: 0.9rem; margin-bottom: 15px; text-align: center; padding: 10px; background: rgba(255, 68, 68, 0.1); border-radius: 5px;">
+                    <!-- General error messages will appear here -->
+                </div>
+                <button type="submit" class="btn btn-primary" id="loginSubmitBtn" style="width: 100%; padding: 18px;">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </button>
+            </form>
+
+            <div style="text-align: center;">
+                <p style="color: var(--gray-medium);">
+                    Don't have an account?
+                    <a href="#" id="showRegister"
+                        style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Register here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="auth-modal" id="registerModal">
+        <div class="auth-container">
+            <button class="auth-close" id="closeRegister">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 style="font-size: 2.5rem; margin-bottom: 10px; color: var(--dark-color);">Create Account</h2>
+            <p style="color: var(--gray-medium); margin-bottom: 40px;">Join ZipFlow Pro for advanced file processing</p>
+
+            <form id="registerForm" style="margin-bottom: 30px;">
+                <div style="margin-bottom: 20px;">
+                    <input type="text" id="registerName" placeholder="Full Name" required
+                        style="width: 100%; padding: 18px; border-radius: 12px; border: 1px solid var(--gray-light); background: var(--card-bg); color: var(--dark-color); font-size: 1rem;">
+                    <div id="registerNameError" class="error-label"
+                        style="display: none; color: #ff4444; font-size: 0.9rem; margin-top: 5px; text-align: left;">
+                        Name is required
+                    </div>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <input type="email" id="registerEmail" placeholder="Email Address" required
+                        style="width: 100%; padding: 18px; border-radius: 12px; border: 1px solid var(--gray-light); background: var(--card-bg); color: var(--dark-color); font-size: 1rem;">
+                    <div id="registerEmailError" class="error-label"
+                        style="display: none; color: #ff4444; font-size: 0.9rem; margin-top: 5px; text-align: left;">
+                        Please enter a valid email address
+                    </div>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <input type="password" id="registerPassword" placeholder="Password" required
+                        style="width: 100%; padding: 18px; border-radius: 12px; border: 1px solid var(--gray-light); background: var(--card-bg); color: var(--dark-color); font-size: 1rem;">
+                    <div id="registerPasswordError" class="error-label"
+                        style="display: none; color: #ff4444; font-size: 0.9rem; margin-top: 5px; text-align: left;">
+                        Password must be at least 6 characters
+                    </div>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <input type="password" id="registerConfirmPassword" placeholder="Confirm Password" required
+                        style="width: 100%; padding: 18px; border-radius: 12px; border: 1px solid var(--gray-light); background: var(--card-bg); color: var(--dark-color); font-size: 1rem;">
+                    <div id="registerConfirmPasswordError" class="error-label"
+                        style="display: none; color: #ff4444; font-size: 0.9rem; margin-top: 5px; text-align: left;">
+                        Passwords do not match
+                    </div>
+                </div>
+                <div id="registerGeneralError" class="error-label"
+                    style="display: none; color: #ff4444; font-size: 0.9rem; margin-bottom: 15px; text-align: center; padding: 10px; background: rgba(255, 68, 68, 0.1); border-radius: 5px;">
+                    <!-- General error messages will appear here -->
+                </div>
+                <button type="submit" class="btn btn-primary" id="registerSubmitBtn"
+                    style="width: 100%; padding: 18px;">
+                    <i class="fas fa-user-plus"></i> Create Account
+                </button>
+            </form>
+
+            <div style="text-align: center;">
+                <p style="color: var(--gray-medium);">
+                    Already have an account?
+                    <a href="#" id="showLogin"
+                        style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Login here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
